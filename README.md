@@ -16,14 +16,16 @@ These instructions will get you a copy of the project up and running on your loc
 2. Dump mysql database into mysql database
 ```
 
-### Installing
+### URL
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+![stack Overflow](https://thumb.ibb.co/c3udzn/IMG.png)
 
 ```
-Give the example
+Home:
+http://localhost:8080/mvc-jdbc-case-study/
+
+Display All articles
+http://localhost:8080/mvc-jdbc-case-study/displayArticles
 ```
 
 And repeat
