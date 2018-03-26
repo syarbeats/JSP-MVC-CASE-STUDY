@@ -2,3 +2,4 @@ com\cdc\mitrais\dao\IArticleDAO.class
 com\cdc\mitrais\dao\ArticleDAO.class
 com\cdc\mitrais\database\util\ConnectionPool.class
 com\cdc\mitrais\model\Article.class
+com\cdc\mitrais\controller\Article.class

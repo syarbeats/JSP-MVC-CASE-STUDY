@@ -17,10 +17,6 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cdc.mitrais.dao.ArticleDAO;
-import com.cdc.mitrais.dao.Test;
-
-
 public class ConnectionPool {
 
 	/*static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
