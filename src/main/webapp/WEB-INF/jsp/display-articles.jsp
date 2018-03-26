@@ -15,7 +15,7 @@
 <body>
 <br>
 	<div class="row" style="margin-top: 30px">
-    	<div class="col-md-6 offset-4">
+    	<div class="col-md-6 offset-5">
         	<nav class="navbar navbar-light bd-faded">
             	<h2><label class="alert-primary text-sm-center">CUSTOMER LIST</label></h2>
             </nav>
