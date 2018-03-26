@@ -15,7 +15,7 @@
 <body>
 <br>
 	<div class="row" style="margin-top: 30px">
-    	<div class="col-md-6 offset-4">
+    	<div class="col-md-6 offset-5">
         	<nav class="navbar navbar-light bd-faded">
             	<h2><label class="alert-primary text-sm-center">CUSTOMER LIST</label></h2>
             </nav>
@@ -27,6 +27,7 @@
 		<th CLASS="TITLE">ID</th>
 		<th CLASS="TITLE">TITLE</th>
 		<th CLASS="TITLE">CATEGORY</th>
+		<th CLASS="TITLE"></th>
 	</tr>
 	
 	<c:forEach items="${articles}" var="article">
@@ -34,6 +35,7 @@
 	    <td>${article.articleId}</td>
 	    <td>${article.title}</td>
 	    <td>${article.category}</td>
+	    <td><a href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Edit</a> <a href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Delete</a></td>
 	</tr>
 	</c:forEach>
 	

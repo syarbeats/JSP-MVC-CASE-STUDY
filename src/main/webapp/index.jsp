@@ -26,7 +26,7 @@
                     <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" class="btn btn-secondary" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/displayArticles';">Show All Article</button>
-                            <button type="button" class="btn btn-info" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/editArticle';">Update Article</button>
+                            <button type="button" class="btn btn-info" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/edit-article.jsp';">Update Article</button>
                             <button type="button" class="btn btn-danger" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/deleteArticle';">Delete Article</button>
                             <button type="button" class="btn btn-dark" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/addArticle';">Insert Article</button>
                             <button type="button" class="btn btn-primary" onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/searchArticleById';">Search Article By Id</button>
