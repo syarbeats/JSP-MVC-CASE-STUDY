@@ -35,7 +35,7 @@
 	    <td>${article.articleId}</td>
 	    <td>${article.title}</td>
 	    <td>${article.category}</td>
-	    <td><a href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Edit</a> <a href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Delete</a></td>
+	    <td><a href="http://localhost:8080/mvc-jdbc-case-study/editArticle?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Edit</a> <a href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Delete</a></td>
 	</tr>
 	</c:forEach>
 	

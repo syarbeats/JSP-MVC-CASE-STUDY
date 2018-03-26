@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,15 +22,15 @@
                     <form action="editArticle" type="POST">
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Article ID</label></div>
-                            <div class="col-md-4"><input class="form-group" id="id" placeholder="Article Id"></div>
+                            <div class="col-md-4"><input class="form-group" id="id" value="${article.articleId}"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Title</label></div>
-                            <div class="col-md-4"><input class="form-group" id="title" placeholder="Title"></div>
+                            <div class="col-md-4"><input class="form-group" id="title" value="${article.title}"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Category</label></div>
-                            <div class="col-md-4"><input class="form-group" id="category" placeholder="Category"></div>
+                            <div class="col-md-4"><input class="form-group" id="category" value="${article.category}"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 offset-4"><button type="button" class="btn btn-primary" onclick="location.href='http://localhost:8080';">Save Article</button></div>

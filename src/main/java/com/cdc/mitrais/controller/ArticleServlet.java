@@ -116,7 +116,20 @@ public class ArticleServlet extends HttpServlet {
 	}
 
 	private void editArticle(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		Article article = new Article();
+		article.setArticleId(Integer.valueOf(request.getParameter("articleId")));
+		article.setTitle(request.getParameter("title"));
+		article.setCategory(request.getParameter("category"));
+		request.setAttribute("article", article);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/edit-article.jsp");
+		try {
+			dispatcher.forward(request, response);
+		} catch (ServletException | IOException e) {
+			logger.debug(e.toString());
+			e.printStackTrace();
+		}
+		
 		
 	}
 
