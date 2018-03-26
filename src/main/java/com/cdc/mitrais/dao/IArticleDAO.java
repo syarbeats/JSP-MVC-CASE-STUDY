@@ -8,6 +8,6 @@ public interface IArticleDAO {
 	public List<Article> getAllArticles();
 	public Article getArticleById(int Id);
 	public Article getArticleByTitle(String title);
-	public void updateArticle(int Id);
-	public void deleteArticle(int Id);
+	public int updateArticle(Article article);
+	public int deleteArticle(int Id);
 }
