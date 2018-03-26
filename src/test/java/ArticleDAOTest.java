@@ -1,4 +1,4 @@
-package com.cdc.mitrais.test;
+
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -52,10 +52,31 @@ public class ArticleDAOTest {
 		assertEquals(article2.getTitle().trim(),"Enterprise Integration Pattern");
 		
 	}
-
+	
 	@Test
-	public void testDeleteArticle() {
-		fail("Not yet implemented");
+	public void testInsertArticle() {
+		Article article = new Article();
+
+		article.setTitle("Apache Camel");
+		article.setCategory("Enterprise Application");
+	
+		assertEquals(dao.addArticle(article),1);			
 	}
+	
+	@Test
+	public void testDeleteTheLatestData() {
+		Article article = new Article();
+		article = dao.getTheLatestId();
+		dao.deleteArticle(article.getArticleId());
+	}
+	
+	@Test
+	public void testGetTheLatestDataInserted() {
+		Article article = new Article();
+		article = dao.getTheLatestId();
+		
+		assertEquals(Integer.valueOf(12), article.getArticleId());
+	}
+	
 
 }

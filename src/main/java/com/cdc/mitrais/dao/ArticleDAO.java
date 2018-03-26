@@ -134,4 +134,55 @@ public class ArticleDAO implements IArticleDAO{
 		return rs;	
 	}
 
+	@Override
+	public int addArticle(Article article) {
+		int rs =0;
+
+		try {
+			String sql = "INSERT INTO Articles (title, Category) VALUES(?,?)";
+			PreparedStatement statement = connectionPool.getPreparedStatement(sql);
+			statement.setString(1, article.getTitle());
+			statement.setString(2, article.getCategory());
+
+			rs = statement.executeUpdate();
+			logger.debug(rs +"Data has been inserted");
+
+		} catch (SQLException e) {
+			logger.debug(e.toString());
+			e.printStackTrace();
+
+		}
+
+		return rs;
+	}
+
+	@Override
+	public Article getTheLatestId() {
+		
+		Article article = new Article();
+		
+		try {
+			PreparedStatement statement = connectionPool.getPreparedStatement("Select * From Articles");
+			ResultSet rs = statement.executeQuery();
+			
+
+			while(rs.last()) {
+				
+				article.setArticleId(rs.getInt("article_id"));
+				logger.debug(article.getArticleId().toString());
+				article.setTitle(rs.getString("title"));
+				logger.debug(article.getTitle());
+				article.setCategory(rs.getString("category"));
+				break;
+			}
+
+		} catch (SQLException e) {
+			logger.debug(e.toString());
+			e.printStackTrace();
+			return null;
+		}
+		
+		return article;
+	}
+
 }

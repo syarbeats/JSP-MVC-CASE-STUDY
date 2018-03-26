@@ -10,4 +10,6 @@ public interface IArticleDAO {
 	public Article getArticleByTitle(String title);
 	public int updateArticle(Article article);
 	public int deleteArticle(int Id);
+	public int addArticle(Article article);
+	public Article getTheLatestId();
 }
