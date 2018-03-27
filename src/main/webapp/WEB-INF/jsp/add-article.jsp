@@ -9,6 +9,20 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		
+		$(document).ready(function() {
+			$("#category").keypress(function() {
+				 if(e.which == 13) {
+					 $("#save").click();
+			     }
+				
+			});
+		});
+	</script>
+
 </head>
 <body>
 	<div class="container">
@@ -51,7 +65,7 @@
 							</div>
 							<div class="row">
 								<div class="col-md-4 offset-4">
-									<input type="submit" class="btn btn-primary"
+									<input id="save" type="submit" class="btn btn-primary"
 										value="Save Article" />
 								</div>
 								<div class="col-md-4" style="margin-left: 0px">

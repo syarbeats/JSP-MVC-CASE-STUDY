@@ -82,7 +82,16 @@ public class ArticleServlet extends HttpServlet {
 		
 	}
 
-
+    @SuppressWarnings("unused")
+	private void login(HttpServletRequest request, HttpServletResponse response) {
+    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+    	try {
+			dispatcher.forward(request, response);
+		} catch (ServletException | IOException e) {
+			logger.debug(e.toString());
+			e.printStackTrace();
+		}
+    }
 
 	private void saveNewArticle(HttpServletRequest request, HttpServletResponse response) {
 		logger.debug("URL(AddArticle):"+request.getServletPath());
