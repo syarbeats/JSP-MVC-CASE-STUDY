@@ -68,7 +68,9 @@ public class ArticleServlet extends HttpServlet {
 			case "/saveArticle":
 				saveArticle(request, response);
 				break;
-
+			case "/saveNewArticle":
+				saveNewArticle(request, response);
+				break;
 			default:
 				showAllArticle(request, response);
 				break;
@@ -77,12 +79,26 @@ public class ArticleServlet extends HttpServlet {
 		}catch(Exception ex) {
 
 		}
-
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
-		//dispatcher.forward(request, response);
+		
 	}
 
 
+
+	private void saveNewArticle(HttpServletRequest request, HttpServletResponse response) {
+		logger.debug("URL(AddArticle):"+request.getServletPath());
+		Article article = new Article();
+		article.setTitle(request.getParameter("title"));
+		article.setCategory(request.getParameter("category"));
+		int res = articleDAO.addArticle(article);
+		
+		if(res > 0) {
+			logger.debug("Saving new article is success...");
+			this.showAllArticle(request, response);
+		}else {
+			logger.debug("Saving new article is failed...");
+		}
+		
+	}
 
 	private void search(HttpServletRequest request, HttpServletResponse response) {
 		logger.debug("URL(Search):"+request.getServletPath());	
@@ -114,15 +130,6 @@ public class ArticleServlet extends HttpServlet {
 		if(res > 0) {
 			logger.debug("Data has been updated..");
 			showAllArticle(request, response);
-			/*List<Article> articleList = articleDAO.getAllArticles();
-			request.setAttribute("articles", articleList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/display-articles.jsp");
-			try {
-				dispatcher.forward(request, response);
-			} catch (ServletException | IOException e) {
-				logger.debug(e.toString());
-				e.printStackTrace();
-			}*/
 		}else {
 			logger.debug("Update data was failed");
 		}
@@ -211,8 +218,14 @@ public class ArticleServlet extends HttpServlet {
 	}
 
 	private void addArticle(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/add-article.jsp");
+		try {
+			dispatcher.forward(request, response);
+		} catch (ServletException | IOException e) {
+			logger.debug(e.toString());
+			e.printStackTrace();
+		}
 	}
 
 	/**

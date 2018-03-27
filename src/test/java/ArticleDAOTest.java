@@ -41,15 +41,15 @@ public class ArticleDAOTest {
 	public void testUpdateArticle() {
 		Article article = new Article();
 		
-		article.setArticleId(10);
-		article.setTitle("Enterprise Integration Pattern");
-		article.setCategory("Enterprise Application");
+		article.setArticleId(1);
+		article.setTitle("Java Concurrency & Paralel Programming");
+		article.setCategory("Java SE");
 		int rs = dao.updateArticle(article);
 		
 		assertEquals(rs, 1);
 		
-		Article article2 = dao.getArticleById(10);
-		assertEquals(article2.getTitle().trim(),"Enterprise Integration Pattern");
+		Article article2 = dao.getArticleById(1);
+		assertEquals(article2.getTitle().trim(),"Java Concurrency & Paralel Programming");
 		
 	}
 	
