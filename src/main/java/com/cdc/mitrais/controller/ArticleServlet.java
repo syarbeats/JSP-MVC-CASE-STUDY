@@ -62,8 +62,9 @@ public class ArticleServlet extends HttpServlet {
 			case "/displayArticles":
 				showAllArticle(request, response);
 				break;
-
-			
+			case "/saveArticle":
+				saveArticle(request, response);
+				break;
 			}
 			
 		}catch(Exception ex) {
@@ -72,6 +73,38 @@ public class ArticleServlet extends HttpServlet {
 		
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
 		//dispatcher.forward(request, response);
+	}
+
+	
+
+	private void saveArticle(HttpServletRequest request, HttpServletResponse response) {
+		logger.debug("Title:"+request.getParameter("title"));
+		logger.debug("URL: /saveArticle");
+		
+		Article article = new Article();
+		article.setArticleId(Integer.parseInt(request.getParameter("articleId")));
+		article.setTitle(request.getParameter("title"));
+		article.setCategory(request.getParameter("category"));
+		logger.debug("Title:"+article.getTitle()+" Category:"+article.getCategory());
+		int res = articleDAO.updateArticle(article);
+		logger.debug("RES:"+res);
+		
+		if(res > 0) {
+			logger.debug("Data has been updated..");
+			List<Article> articleList = articleDAO.getAllArticles();
+			request.setAttribute("articles", articleList);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/display-articles.jsp");
+			try {
+				dispatcher.forward(request, response);
+			} catch (ServletException | IOException e) {
+				logger.debug(e.toString());
+				e.printStackTrace();
+			}
+		}else {
+			logger.debug("Update data was failed");
+		}
+		
+		
 	}
 
 	private void home(HttpServletRequest request, HttpServletResponse response) {

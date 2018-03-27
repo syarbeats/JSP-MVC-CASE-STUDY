@@ -19,22 +19,22 @@
             <div class="card">
                 <div class="card-header text-sm-center">Edit Article Data</div>
                 <div class="card-body">
-                    <form action="editArticle" type="POST">
+                    <form action="http://localhost:8080/mvc-jdbc-case-study/saveArticle" method = "POST">
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Article ID</label></div>
-                            <div class="col-md-4"><input class="form-group" id="id" value="${article.articleId}"></div>
+                            <div class="col-md-4"><input class="form-group" id="id" name="articleId" value="${article.articleId}"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Title</label></div>
-                            <div class="col-md-4"><input class="form-group" id="title" value="${article.title}"></div>
+                            <div class="col-md-4"><input class="form-group" id="title" name="title" value="${article.title}"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-4"><label class="form-group">Category</label></div>
-                            <div class="col-md-4"><input class="form-group" id="category" value="${article.category}"></div>
+                            <div class="col-md-4"><input class="form-group" id="category" name="category" value="${article.category}"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-4"><button type="button" class="btn btn-primary" onclick="location.href='http://localhost:8080';">Save Article</button></div>
-                            <div class="col-md-4" style="margin-left: 0px"><button type="button" class="btn btn-info" onclick="location.href='http://localhost:8080';">Cancel</button></div>
+                            <div class="col-md-4 offset-4"><input type="submit" class="btn btn-primary" value="Save Article"/></div>
+                            <div class="col-md-4" style="margin-left: 0px"><input type="reset" class="btn btn-info" value="Cancel"/></div>
                         </div>
                     </form>
                 </div>
