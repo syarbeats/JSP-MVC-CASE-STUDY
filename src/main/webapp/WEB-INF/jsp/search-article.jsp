@@ -14,6 +14,24 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	
+	$(document).ready(function() {
+		$("#articleId").keypress(function() {
+			 if(e.which == 13) {
+		        articleId = $("#articleId").val();
+				url = "http://localhost:8080/mvc-jdbc-case-study/searchArticleById?articleId="+articleId;
+				console.log("url:"+url);
+				window.open(url,"_self");
+		     }
+			
+		});
+	});
+</script>
+
 </head>
 <body>
 	<div class="container">
@@ -34,7 +52,7 @@
 					<div class="input-group">
 						<span class="input-group-btn"> <input
 							class="btn btn-secondary" type="submit" value="Search Article" />
-						</span> <input type="text" name="articleId" class="form-control"
+						</span> <input id="articleId" type="text" name="articleId" class="form-control"
 							placeholder="Insert Article Id.">
 					</div>
 				</form>

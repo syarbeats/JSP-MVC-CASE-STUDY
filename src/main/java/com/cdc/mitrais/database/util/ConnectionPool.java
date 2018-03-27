@@ -19,11 +19,6 @@ import org.slf4j.LoggerFactory;
 
 public class ConnectionPool {
 
-	/*static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String JDBC_URL = "jdbc:mysql://localhost:3306/zeus";
-
-	static final String JDBC_USER = "root";
-	static final String JDBC_PASS = "";*/
 	
 	private String db_driver;
 	private String db_url;
@@ -58,7 +53,7 @@ public class ConnectionPool {
 				return;
 			}
 
-			//load a properties file from class path, inside static method
+			
 			prop.load(input);
 
 			this.setDb_driver(prop.getProperty("db_driver"));
@@ -102,7 +97,6 @@ public class ConnectionPool {
 		Class.forName(this.getDb_driver());
 		gPool = new GenericObjectPool();
 		gPool.setMaxActive(5);
-		//ConnectionFactory connectionFactory = new DriverManagerConnectionFactory(JDBC_URL, JDBC_USER, JDBC_PASS);
 		ConnectionFactory connectionFactory = new DriverManagerConnectionFactory(this.getDb_url(), this.getDb_user(), this.getDb_password());
 		PoolableConnectionFactory poolableConnection = new PoolableConnectionFactory(connectionFactory, gPool, null, null, false, true);
 
