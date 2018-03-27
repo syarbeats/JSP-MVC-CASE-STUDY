@@ -90,7 +90,7 @@
 							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/edit-article.jsp';">Update
 							Article</button>
 						<button type="button" class="btn btn-danger"
-							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/deleteArticle';">Delete
+							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/search';">Delete
 							Article</button>
 						<button type="button" class="btn btn-dark"
 							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/addArticle';">Insert

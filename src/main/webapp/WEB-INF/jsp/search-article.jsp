@@ -43,26 +43,26 @@
 
 		<div class="row" style="margin-top: 30px">
 			<div class="col-md-12">
-				<table BORDER=5 ALIGN="CENTER">
+				<table BORDER=1 ALIGN="CENTER" class="table">
+					<thead class="thead-dark">
 					<tr>
 						<th CLASS="TITLE">ID</th>
 						<th CLASS="TITLE">TITLE</th>
 						<th CLASS="TITLE">CATEGORY</th>
 						<th CLASS="TITLE"></th>
 					</tr>
-
-
+					</thead>
+					<tbody>
 					<tr>
 						<td>${article.articleId}</td>
 						<td>${article.title}</td>
 						<td>${article.category}</td>
-						<td><a
+						<td><a class="btn btn-info"
 							href="http://localhost:8080/mvc-jdbc-case-study/editArticle?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Edit</a>
-							<a
-							href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Delete</a></td>
+							<a class="btn btn-danger"
+							href="http://localhost:8080/mvc-jdbc-case-study/deleteArticle?articleId=${article.articleId}">Delete</a></td>
 					</tr>
-
-
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/edit-article.jsp';">Update
 							Article</button>
 						<button type="button" class="btn btn-danger"
-							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/deleteArticle';">Delete
+							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/search';">Delete
 							Article</button>
 						<button type="button" class="btn btn-dark"
 							onclick="location.href='http://localhost:8080/mvc-jdbc-case-study/addArticle';">Insert
