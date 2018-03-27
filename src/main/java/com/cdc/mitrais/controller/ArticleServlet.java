@@ -113,7 +113,8 @@ public class ArticleServlet extends HttpServlet {
 
 		if(res > 0) {
 			logger.debug("Data has been updated..");
-			List<Article> articleList = articleDAO.getAllArticles();
+			showAllArticle(request, response);
+			/*List<Article> articleList = articleDAO.getAllArticles();
 			request.setAttribute("articles", articleList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/display-articles.jsp");
 			try {
@@ -121,7 +122,7 @@ public class ArticleServlet extends HttpServlet {
 			} catch (ServletException | IOException e) {
 				logger.debug(e.toString());
 				e.printStackTrace();
-			}
+			}*/
 		}else {
 			logger.debug("Update data was failed");
 		}
@@ -184,8 +185,11 @@ public class ArticleServlet extends HttpServlet {
 	}
 
 	private void deleteArticle(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-
+		
+		logger.debug("URL(Delete):"+request.getServletPath());
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		articleDAO.deleteArticle(articleId);
+		showAllArticle(request, response);
 	}
 
 	private void editArticle(HttpServletRequest request, HttpServletResponse response) {

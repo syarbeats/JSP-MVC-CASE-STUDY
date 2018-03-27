@@ -58,7 +58,7 @@
 							<td><a
 								href="http://localhost:8080/mvc-jdbc-case-study/editArticle?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Edit</a>
 								<a
-								href="mvc-jdbc-case-study/edit-article.jsp?articleId=${article.articleId}&title=${article.title}&category=${article.category}">Delete</a></td>
+								href="http://localhost:8080/mvc-jdbc-case-study/deleteArticle?articleId=${article.articleId}">Delete</a></td>
 						</tr>
 					</c:forEach>
 
